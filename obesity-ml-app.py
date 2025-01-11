@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 # Load and preprocess the dataset
-data_path = '/mnt/data/obesity_data.csv'
+data_path = 'Obesity-ML-App\obesity_data.csv'
 df = pd.read_csv(data_path)
 
 # Filter out unrealistic BMI values
