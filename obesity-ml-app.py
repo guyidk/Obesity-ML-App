@@ -5,8 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 # Load and preprocess the dataset
-data_path = '/obesity_data.csv'
-df = pd.read_csv(data_path)
+df = pd.read_csv('obesity_data.csv')
 
 # Filter out unrealistic BMI values
 df = df.loc[(df['BMI'] >= 10) & (df['BMI'] <= 40)]
