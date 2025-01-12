@@ -79,4 +79,13 @@ prediction = model.predict(df_user)
 st.subheader('Prediction')
 st.write(f"You are classified as: **{prediction[0]}**")
 
+# Display feature importance
+st.subheader('Feature Importance')
+feature_importance = pd.DataFrame({
+    'Feature': X.columns,
+    'Importance': model.feature_importances_
+}).sort_values(by='Importance', ascending=False)
+
+st.write(feature_importance)
+
 
