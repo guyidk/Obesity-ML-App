@@ -90,5 +90,3 @@ st.write(feature_importance)
 
 st.write(df.corr())  # Analyze correlations between features and the target
 
-st.write(df['ObesityCategory'].value_counts())
-
