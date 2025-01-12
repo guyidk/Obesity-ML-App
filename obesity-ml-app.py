@@ -43,6 +43,7 @@ def user_input_features():
     # Calculate BMI
     bmi = weight / ((height / 100) ** 2)
 
+    # Prepare input data
     data = {
         'Age': age,
         'BMI': bmi,
@@ -59,14 +60,17 @@ def user_input_features():
 # Get user input
 df_user = user_input_features()
 
+# Ensure consistent columns between user input and training data
+missing_cols = set(X.columns) - set(df_user.columns)
+for col in missing_cols:
+    df_user[col] = 0  # Add missing columns with default value 0
+
+# Reorder columns to match the training data
+df_user = df_user[X.columns]
+
 # Display user input
 st.subheader('User Input Parameters')
 st.write(df_user)
-
-# Match columns between user input and training data
-missing_cols = set(X.columns) - set(df_user.columns)
-for col in missing_cols:
-    df_user[col] = 0
 
 # Predict obesity category
 prediction = model.predict(df_user)
