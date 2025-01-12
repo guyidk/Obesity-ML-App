@@ -74,13 +74,9 @@ st.write(df_user)
 
 # Predict obesity category
 prediction = model.predict(df_user)
-prediction_proba = model.predict_proba(df_user)
 
 # Display prediction
 st.subheader('Prediction')
 st.write(f"You are classified as: **{prediction[0]}**")
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
 
-st.write("Note: This prediction is based on a machine learning model and may not be 100% accurate.")
